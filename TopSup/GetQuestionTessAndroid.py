@@ -22,7 +22,11 @@ while True:
 
     # img = Image.open("./screenshot.png")
     try:
-        req = requests.get(url='http://htpmsg.jiecaojingxuan.com/msg/current').text
+        header = {
+            'X-Live-Session-Token': '1.14798248.1096088.dNC.50bc48fc13c5ecef96c951040fbdd94b',
+            'Content-Type': 'application/json',
+        }
+        req = requests.get(url='http://msg.api.chongdingdahui.com/msg/current',headers=header).text
         # print(req)
         # req='{"code":0,"msg":"成功","data":{"event":{"answerTime":10,"desc":"12.在节目《国家宝藏》中出现的《千里江山图》作者是   ","displayOrder":11,"liveId":97,"options":"[\"于蕾 \",\"李晨\",\"王希孟\"]","questionId":1113,"showTime":1515676395781,"status":0,"type":"showQuestion"},"type":"showQuestion"}}'
         # req='{"code":0,"msg":"成功","data":{"event":{"answerTime":10,"desc":"12.中国古代\\"双手抱拳举过头顶,鞠躬\\",表达什么意思?","displayOrder":11,"liveId":98,"options":[\"稽首\",\"长揖\",\"顿首\"],"questionId":1185,"showTime":1515734140999,"status":0,"type":"showQuestion"}}}'
