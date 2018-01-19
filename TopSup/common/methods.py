@@ -10,6 +10,7 @@ import urllib.parse
 
 def open_webbrowser(question):
     webbrowser.open('https://baidu.com/s?wd=' + urllib.parse.quote(question))
+    # webbrowser.open('https://www.google.com/search?q=' + urllib.parse.quote(question))
 
 def open_webbrowser_count(question,choices):
     print('\n-- 方法2： 题目+选项搜索结果计数法 --\n')

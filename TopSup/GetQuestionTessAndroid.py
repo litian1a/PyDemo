@@ -22,8 +22,10 @@ while True:
 
     # img = Image.open("./screenshot.png")
     try:
+        # resp=requests.post('http://api.api.chongdingdahui.com/user/current', headers=header,data="{}")
         header = {
-            'X-Live-Session-Token': '1.14798248.1096088.dNC.50bc48fc13c5ecef96c951040fbdd94b',
+        # 填写你抓到的token
+            'X-Live-Session-Token': '',
             'Content-Type': 'application/json',
         }
         req = requests.get(url='http://msg.api.chongdingdahui.com/msg/current',headers=header).text
@@ -51,17 +53,15 @@ while True:
             questionId=content['data']['event']['questionId']
             question=content['data']['event']['desc']
             choices=content['data']['event']['options']
+            index=question.find(".")
+            question=question[index+1:len(question)]
             # 多线程
             if lastQuestionId!=questionId:
                 print(req)
-
                 m1 = Thread(methods.run_algorithm(0, question, choices))
-                m1.start()
-
-                # m1 = Thread(methods.run_algorithm(0, question, choices))
                 m2 = Thread(methods.run_algorithm(1, question, choices))
                 m3 = Thread(methods.run_algorithm(2, question, choices))
-                # m1.start()
+                m1.start()
                 m2.start()
                 m3.start()
                 print('------------------------')
