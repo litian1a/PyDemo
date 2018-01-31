@@ -73,7 +73,13 @@ def output(choices, counts):
 
 def run_algorithm(al_num, question, choices):
     if al_num == 0:
-        open_webbrowser(question)
+        questionAnswer=question
+        for i in choices:
+            print(i)
+            questionAnswer=questionAnswer+i
+        print(questionAnswer)
+        open_webbrowser(questionAnswer)
+
     elif al_num == 1:
         open_webbrowser_count(question, choices)
     elif al_num == 2:

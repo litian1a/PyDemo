@@ -24,14 +24,13 @@ while True:
     try:
         # resp=requests.post('http://api.api.chongdingdahui.com/user/current', headers=header,data="{}")
         header = {
-        # 填写你抓到的token
-            'X-Live-Session-Token': '',
+            'X-Live-Session-Token': '1.14798248.1704794.WgA.480378bc591d8ba5a23c3366f95be5ff',
             'Content-Type': 'application/json',
         }
-        req = requests.get(url='http://msg.api.chongdingdahui.com/msg/current',headers=header).text
+        req = requests.get(url='http://msg.api.chongdingdahui.com/msg/current',headers=header,timeout=3).text
         # print(req)
-        # req='{"code":0,"msg":"成功","data":{"event":{"answerTime":10,"desc":"12.在节目《国家宝藏》中出现的《千里江山图》作者是   ","displayOrder":11,"liveId":97,"options":"[\"于蕾 \",\"李晨\",\"王希孟\"]","questionId":1113,"showTime":1515676395781,"status":0,"type":"showQuestion"},"type":"showQuestion"}}'
         # req='{"code":0,"msg":"成功","data":{"event":{"answerTime":10,"desc":"12.中国古代\\"双手抱拳举过头顶,鞠躬\\",表达什么意思?","displayOrder":11,"liveId":98,"options":[\"稽首\",\"长揖\",\"顿首\"],"questionId":1185,"showTime":1515734140999,"status":0,"type":"showQuestion"}}}'
+        # req='{"code":0,"msg":"成功","data":{"event":{"answerTime":10,"desc":"12.9月22日是以下什么日子? ","displayOrder":11,"liveId":182,"options":["世界鸵鸟日  ","世界大象日 ","世界犀牛日"],"questionId":2133,"showTime":16910538540720,"status":0,"type":"showQuestion"}}}'
 
 
         req=req.replace("\"[","[")
