@@ -24,7 +24,7 @@ while True:
     try:
         # resp=requests.post('http://api.api.chongdingdahui.com/user/current', headers=header,data="{}")
         header = {
-            'X-Live-Session-Token': '1.14798248.1704794.WgA.480378bc591d8ba5a23c3366f95be5ff',
+            'X-Live-Session-Token': '1.14798248.2811680.ivg.0b73afaf39d1f10e35f53574098e0958',
             'Content-Type': 'application/json',
         }
         req = requests.get(url='http://msg.api.chongdingdahui.com/msg/current',headers=header,timeout=3).text
